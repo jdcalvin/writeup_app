@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @content.code %>
+</p>
+
+<p>
+  <strong>Cat:</strong>
+  <%= @content.cat %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @content.desc %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @content.context %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
