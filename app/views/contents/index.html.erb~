@@ -1,0 +1,43 @@
+<h1>Listing contents</h1>
+
+<table class="table table-bordered">
+  <thead style="text-align:center">
+    <tr>
+      <th>Code</th>
+      <th>Cat</th>
+      <th>Desc</th>
+      <th>Context</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+			<tr>
+				<%= link_to, content %>					
+        <td><%= content.code %></td>
+        <td><%= content.cat %></td>
+        <td><%= simple_format content.desc %></td>
+        <td><%= content.context %></td>
+        <td>
+          <%= link_to 'Show', content %> |
+          <%= link_to 'Edit', edit_content_path(content) %> |
+					<%= link_to 'Destroy', content, method: 
+												:delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content', new_content_path %>
+<br>
+<h2> Import Exceptions</h2>
+<%= form_tag import_contents_path, multipart: true do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "Import" %>
+<% end %>
+
+	

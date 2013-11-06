@@ -3,7 +3,7 @@ class CreateContents < ActiveRecord::Migration
     create_table :contents do |t|
       t.string :code
       t.string :cat
-      t.string :desc
+      t.text :desc
       t.string :context
 
       t.timestamps
