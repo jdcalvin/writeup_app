@@ -1,5 +1,11 @@
 WriteupApp::Application.routes.draw do
-  resources :contents
+  get "static_pages/home"
+  get "static_pages/help"
+  resources :contents do
+		collection { post :import }
+	end
+	root to: 'contents#index'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,7 +20,8 @@ WriteupApp::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+  # Example resource:w
+	# route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
   # Example resource route with options:
