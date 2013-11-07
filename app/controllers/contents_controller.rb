@@ -60,7 +60,8 @@ class ContentsController < ApplicationController
       format.json { head :no_content }
     end
   end
-	
+
+  # Imports exceptions from a local CSV file	
   def import
     Content.import(params[:file])
     redirect_to root_url, notice: "Exceptions imported."
