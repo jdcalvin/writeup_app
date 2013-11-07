@@ -61,10 +61,10 @@ class ContentsController < ApplicationController
     end
   end
 	
-	def import
-		Content.import(params[:file])
-		redirect_to root_url, notice: "Products imported."
-	end
+  def import
+    Content.import(params[:file])
+    redirect_to root_url, notice: "Exceptions imported."
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
