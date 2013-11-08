@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20131108040000) do
 
   add_index "comments", ["content_id"], name: "index_comments_on_content_id"
 
+# Could not dump table "blah" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
   create_table "contents", force: true do |t|
     t.string   "code"
     t.string   "cat"

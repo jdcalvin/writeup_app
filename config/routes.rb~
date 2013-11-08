@@ -1,6 +1,7 @@
 WriteupApp::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/help"
+<<<<<<< HEAD
   resources :contents do
 		collection { post :import } 
 		resources :comments, only [:create, :destroy]
@@ -8,6 +9,9 @@ WriteupApp::Application.routes.draw do
 	end
 	root to: 'contents#index'
 
+=======
+  resources :contents 
+>>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
 
 
   # The priority is based upon order of creation: first created -> highest priority.
