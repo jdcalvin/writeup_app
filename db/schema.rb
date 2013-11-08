@@ -11,17 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106060643) do
-
-# Could not dump table "blah" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+ActiveRecord::Schema.define(version: 20131108040000) do
 
   create_table "comments", force: true do |t|
-    t.string   "post"
-    t.integer  "user_id"
+    t.integer  "content_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["content_id"], name: "index_comments_on_content_id"
 
   create_table "contents", force: true do |t|
     t.string   "code"

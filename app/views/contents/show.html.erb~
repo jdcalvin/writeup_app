@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @content.code %>
+</p>
+
+<p>
+  <strong>Cat:</strong>
+  <%= @content.cat %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @content.desc %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @content.context %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>
+
+<h2>Comments</h2>
+ <div id="comments">
+   <%= render :partial => @content.comments %>
+ </div>
+
+ <%= form_for [@content, Comment.new] do |f| %>
+		<div class="field">
+      <%= f.label :body, "New comment" %><br>
+      <%= f.text_area :body %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Add comment" %>
+		</div>
+<% end %>

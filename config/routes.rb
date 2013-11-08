@@ -2,7 +2,9 @@ WriteupApp::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/help"
   resources :contents do
-		collection { post :import }
+		collection { post :import } 
+		resources :comments, only: [:create, :destroy]
+		
 	end
 	root to: 'contents#index'
 
