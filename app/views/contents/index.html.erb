@@ -15,22 +15,14 @@
     <% @contents.each do |content| %>
 			<tr>
         <td><%= content.code %></td>
-<<<<<<< HEAD
         <td><%= content.cat %></td>
-=======
-        <td><%= simple_format content.cat %></td>
->>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
         <td><%= simple_format content.desc %></td>
         <td><%= content.context %></td>
         <td>
           <%= link_to 'Show', content %> |
           <%= link_to 'Edit', edit_content_path(content) %> |
 					<%= link_to 'Destroy', content, method: 
-<<<<<<< HEAD
 												:delete, data: { confirm: 'Are you sure?' } %>
-=======
-					:delete, data: { confirm: 'Are you sure?' } %>
->>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
         </td>
       </tr>
     <% end %>
@@ -41,11 +33,7 @@
 
 <%= link_to 'New Content', new_content_path %>
 <br>
-<<<<<<< HEAD
 <h2> Import Exceptions</h2>
-=======
-<h3> Import Exceptions</h3>
->>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
 <%= form_tag import_contents_path, multipart: true do %>
 	<%= file_field_tag :file %>
 	<%= submit_tag "Import" %>

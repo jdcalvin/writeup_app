@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
 				<title>The WriteUp App | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", 
   							 "data-turbolinks-track" => true %>
@@ -13,20 +12,12 @@
 </head>
 <body style="padding-left:10px">
 <%= render 'layouts/header' %>
+<<<<<<< HEAD
+=======
 <div style="padding-top:60px">
 </div>
+>>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
 <%= yield %>
 <p> Write Up App 2013 </p>
-=======
-  <title>WriteupApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
->>>>>>> 2e0fe8f8b6e49c0085ec4976cff37715ea0daf46
 </body>
 </html>

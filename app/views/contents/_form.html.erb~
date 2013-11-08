@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <input type="text" class="form-control" placeholder="Enter Exception Code">
     <%= f.label :code %><br>
     <%= f.text_field :code %>
-  </div>
+  </input>
   <div class="field">
     <%= f.label :cat %><br>
     <%= f.text_field :cat %>
   </div>
-  <div class="field">
+	<textarea class="form-control" rows="3"></textarea>>
     <%= f.label :desc %><br>
-    <%= f.text_field :desc %>
+    <%= f.text_area :desc %>
   </div>
   <div class="field">
     <%= f.label :context %><br>
