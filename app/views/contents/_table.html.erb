@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+  <thead>
+    <tr style="background-color:#222; border:none;">
+      <th>Code</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Context</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contents.each do |content| %>
+			<tr>
+        <td><%= content.code %></td>
+        <td><%= content.cat %></td>
+        <td><%= simple_format content.desc %></td>
+        <td><%= content.context %></td>
+        <td>
+          <%= link_to 'Show', content %> <br>
+          <%= link_to 'Edit', edit_content_path(content) %> <br>
+					<%= link_to 'Destroy', content, method: 
+												:delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

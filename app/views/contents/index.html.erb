@@ -1,42 +1,15 @@
-<h1>Listing contents</h1>
+<% provide(:title, 'Listing Exceptions') %>   
 
-<table class="table table-bordered">
-  <thead style="text-align:center">
-    <tr>
-      <th>Code</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Context</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @contents.each do |content| %>
-			<tr>
-        <td><%= content.code %></td>
-        <td><%= content.cat %></td>
-        <td><%= simple_format content.desc %></td>
-        <td><%= content.context %></td>
-        <td>
-          <%= link_to 'Show', content %> |
-          <%= link_to 'Edit', edit_content_path(content) %> |
-					<%= link_to 'Destroy', content, method: 
-												:delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'table' %>
 
 <br>
-
+<div class="links">
 <%= link_to 'New Content', new_content_path %>
+</div>
 <br>
-<h2> Import Exceptions</h2>
-<%= form_tag import_contents_path, multipart: true do %>
-	<%= file_field_tag :file %>
-	<%= submit_tag "Import" %>
-<% end %>
+
+
+<%= render 'import' %>
+
 
 	

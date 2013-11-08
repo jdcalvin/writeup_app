@@ -10,22 +10,22 @@
       </ul>
     </div>
   <% end %>
-
-  <input type="text" class="form-control" placeholder="Enter Exception Code">
+	<div class="field">
     <%= f.label :code %><br>
-    <%= f.text_field :code %>
+    <%= f.text_field :code, class: "form-control" %>
   </input>
-  <div class="field">
+	
+	<div class="field">
     <%= f.label :cat %><br>
-    <%= f.text_field :cat %>
+    <%= f.text_area :cat, class: "form-control", rows: "4" %>
   </div>
-	<textarea class="form-control" rows="3"></textarea>>
+	<div class="field">
     <%= f.label :desc %><br>
-    <%= f.text_area :desc %>
+    <%= f.text_area :desc, class: "form-control", rows: "5" %>
   </div>
   <div class="field">
     <%= f.label :context %><br>
-    <%= f.text_field :context %>
+    <%= f.text_field :context, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

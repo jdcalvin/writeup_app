@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-				<title>The WriteUp App | <%= yield(:title) %></title>
+				<title>WriteUp | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", 
   							 "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -10,10 +10,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body style="padding-left:10px">
 <%= render 'layouts/header' %>
-<div style="padding-top:60px">
-</div>
 <%= yield %>
 </body>
 </html>

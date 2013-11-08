@@ -1,0 +1,6 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " role="navigation">
+	<a class="navbar-brand">
+		<%= link_to "WriteUp", root_path, id: "logo" %>	
+	</a>
+
+</nav	>

@@ -1,22 +1,23 @@
+<% provide(:title, 'code') %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Code:</strong>
+  <strong>Code:</strong><br>
   <%= @content.code %>
 </p>
 
 <p>
-  <strong>Cat:</strong>
+  <strong>Category:</strong><br>
   <%= @content.cat %>
 </p>
 
 <p>
-  <strong>Desc:</strong>
-  <%= @content.desc %>
+  <strong>Description:</strong><br>
+  <%= simple_format @content.desc %>
 </p>
 
 <p>
-  <strong>Context:</strong>
+  <strong>Context:</strong><br>
   <%= @content.context %>
 </p>
 
@@ -30,10 +31,10 @@
 
  <%= form_for [@content, Comment.new] do |f| %>
 		<div class="field">
-      <%= f.label :body, "New comment" %><br>
-      <%= f.text_area :body %>
+      <%= f.label :body %><br>
+      <%= f.text_area :body, class: "form-control", rows: "5" %>
 		</div>
-		<div class="actions">
-			<%= f.submit "Add comment" %>
+		<div class="actions"> <br>
+			<%= f.submit "Add comment", class: "btn btn-primary btn-sm" %>
 		</div>
 <% end %>

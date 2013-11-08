@@ -1,3 +1,4 @@
+<% provide(:title, @content.code) %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -31,9 +32,9 @@
  <%= form_for [@content, Comment.new] do |f| %>
 		<div class="field">
       <%= f.label :body %><br>
-      <%= f.text_area :body %>
+      <%= f.text_area :body, class: "form-control", rows: "5" %>
 		</div>
-		<div class="actions">
-			<%= f.submit "Add comment" %>
+		<div class="actions"> <br>
+			<%= f.submit "Add comment", class: "btn btn-primary btn-sm" %>
 		</div>
 <% end %>

@@ -1,8 +1,8 @@
-<h1>Listing contents</h1>
+<% provide(:title, 'Listing Exceptions') %>   
 
 <table class="table table-bordered">
-  <thead style="text-align:center">
-    <tr>
+  <thead>
+    <tr style="background-color:#222">
       <th>Code</th>
       <th>Category</th>
       <th>Description</th>
@@ -19,8 +19,8 @@
         <td><%= simple_format content.desc %></td>
         <td><%= content.context %></td>
         <td>
-          <%= link_to 'Show', content %> |
-          <%= link_to 'Edit', edit_content_path(content) %> |
+          <%= link_to 'Show', content %> 
+          <%= link_to 'Edit', edit_content_path(content) %> 
 					<%= link_to 'Destroy', content, method: 
 												:delete, data: { confirm: 'Are you sure?' } %>
         </td>
@@ -34,9 +34,10 @@
 <%= link_to 'New Content', new_content_path %>
 <br>
 <h2> Import Exceptions</h2>
-<%= form_tag import_contents_path, multipart: true do %>
+<%= form_tag import_contents_path, multipart: true  do %>
 	<%= file_field_tag :file %>
-	<%= submit_tag "Import" %>
+	<p class="help-block">Select a CSV file to import</p>
+	<%= submit_tag "Import", class: "btn btn-primary" %>
 <% end %>
 
 	
