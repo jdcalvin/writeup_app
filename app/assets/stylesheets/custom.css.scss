@@ -65,7 +65,7 @@ textarea
 	font-size: 1.7em;
 	padding-top:9px;
 	line-height: 1;
-	color: white;
+	color: gray;
 	&:hover
 	{
 		color: white;
@@ -78,6 +78,7 @@ textarea
 {
 	font-size:12px;
 	color: gray;
+	font-style:italic;
 }
 
 /*--------------------TABLE----------------*/
@@ -86,4 +87,52 @@ th
 {
 	text-align:center;
 	color:white;
+}
+
+
+/*---------New Exceptions-------*/
+.container
+{
+	position:relative;
+
+}
+
+.left, .bar, .right
+{
+	float: left;
+	width: 48%;
+	bottom:0;
+	
+	padding: 0%;
+	margin-bottom: 2%;
+}
+.left
+{
+	
+}
+.right
+{ 
+	float: right;
+	margin-right: 0;
+	
+}
+
+
+
+.field
+{
+	text-indent: 10px;
+}
+
+.bar
+{
+
+height: 600px;
+margin-left:3%;
+margin-right: 3%;
+width: 2px;
+
+
+
+	
 }

@@ -1,40 +1,43 @@
+<div class="container">
 <% provide(:title, @content.code) %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Code:</strong><br>
+  <h4>Code</h4>
   <%= @content.code %>
 </p>
 
 <p>
-  <strong>Category:</strong><br>
+  <h4>Category</h4>
   <%= @content.cat %>
 </p>
 
 <p>
-  <strong>Description:</strong><br>
+  <h4>Description</h4>
   <%= simple_format @content.desc %>
 </p>
 
 <p>
-  <strong>Context:</strong><br>
+  <h4>Context</h4>
   <%= @content.context %>
 </p>
 
-<%= link_to 'Edit', edit_content_path(@content) %> |
-<%= link_to 'Back', contents_path %>
 
-<h2>Comments</h2>
+<h2 style = "text-align:center;">Comments</h2>
  <div id="comments">
    <%= render :partial => @content.comments %>
  </div>
 
  <%= form_for [@content, Comment.new] do |f| %>
 		<div class="field">
-      <%= f.label :body %><br>
-      <%= f.text_area :body, class: "form-control", rows: "5" %>
+      <%= f.text_area :body, class: "form-control", rows: "5", width:"300px"%>
 		</div>
 		<div class="actions"> <br>
 			<%= f.submit "Add comment", class: "btn btn-primary btn-sm" %>
 		</div>
 <% end %>
+	<div class="links">
+			<%= link_to 'Edit', edit_content_path(@content) %> |
+			<%= link_to 'Back', contents_path %>
+	</div>
+</div
