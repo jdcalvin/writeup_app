@@ -1,12 +1,13 @@
 WriteupApp::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
   resources :contents do
 		collection { post :import } 
 		resources :comments, only: [:create, :destroy]
 	end
+
 	root to: 'contents#index'
 
+  match '/home',     to: 'static_pages#home',      via:'get'
+  match '/help',     to: 'static_pages#help',      via:'get'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

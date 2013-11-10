@@ -26,28 +26,26 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
 
-    respond_to do |format|
-      if @content.save
-        format.html { redirect_to @content, notice: 'Content was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @content }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
-      end
+    if @content.save
+      redirect_to @content 
+      flash[:success] = "Exception was successfully created."
+        
+    else
+      render action: 'new'  
+    
     end
   end
 
   # PATCH/PUT /contents/1
   # PATCH/PUT /contents/1.json
   def update
-    respond_to do |format|
-      if @content.update(content_params)
-        format.html { redirect_to @content, notice: 'Content was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
-      end
+    if @content.update(content_params)
+      redirect_to @content
+      flash[:success] = "Exception was successfully updated."
+        
+    else
+      render action: 'edit' 
+        
     end
   end
 
@@ -55,21 +53,18 @@ class ContentsController < ApplicationController
   # DELETE /contents/1.json
   def destroy
     @content.destroy
-    respond_to do |format|
-      format.html { redirect_to contents_url }
-      format.json { head :no_content }
-    end
+    redirect_to contents_url 
+    flash[:info] = "Exception deleted."
+    
   end
 	
-	def import
-		Content.import(params[:file])
-		redirect_to root_url, notice: "Products imported."
-	end
+
 
   # Imports exceptions from a local CSV file	
   def import
     Content.import(params[:file])
-    redirect_to root_url, notice: "Exceptions imported."
+    redirect_to root_url 
+    flash[:success] =  "Exceptions imported."
   end
 
   private
