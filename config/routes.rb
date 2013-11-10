@@ -1,4 +1,5 @@
 WriteupApp::Application.routes.draw do
+  get "users/new"
   resources :contents do
 		collection { post :import } 
 		resources :comments, only: [:create, :destroy]

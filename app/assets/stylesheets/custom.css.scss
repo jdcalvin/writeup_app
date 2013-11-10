@@ -10,15 +10,19 @@ padding-top:10px;
 margin-left:auto;
 margin-right:auto;
 width:70%;
-
-
 text-align:center;
-	
 }
+
+.container
+{
+	position:relative;
+}
+
 a:hover
 {
 	text-decoration:none;
 }
+
 html
 {
 	overflow-y: scroll	
@@ -30,7 +34,6 @@ body
 	padding-right: 20px;
 	padding-bottom: 20px;
 }
-
 section 
 {
 	overflow: auto;
@@ -53,7 +56,6 @@ textarea
 
 .import
 {
-
 	left:50%;
 }
 
@@ -91,34 +93,21 @@ th
 
 
 /*---------New Exceptions-------*/
-.container
-{
-	position:relative;
-	
-
-}
 
 .left, .bar, .right
 {
 	float: left;
 	width: 48%;
 	bottom:0;
-	
 	padding: 0%;
 	margin-bottom: 2%;
 }
-.left
-{
-	
-}
+
 .right
 { 
 	float: right;
-	margin-right: 0;
-	
+	margin-right: 0;	
 }
-
-
 
 .field
 {
@@ -127,13 +116,8 @@ th
 
 .bar
 {
-
 height: 600px;
 margin-left:3%;
 margin-right: 3%;
 width: 2px;
-
-
-
-	
 }
