@@ -11,7 +11,8 @@
 
   <tbody>
     <% @contents.each do |content| %>
-			<tr>
+  
+			
         <td><%= content.code %></td>
         <td><%= content.cat %></td>
         <td><%= simple_format content.desc %></td>
@@ -22,7 +23,7 @@
           
             <% if current_user.admin? %>
             <%= link_to 'Edit', edit_content_path(content) %> <br>
-					  <%= link_to 'Destroy', content, method: 
+					  <%= link_to 'Delete', content, method: 
 												:delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
         </td>
@@ -30,5 +31,7 @@
     <% end %>
   </tbody>
 </table>
+
+
 
 

@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
-
   end
 
   def index
@@ -17,12 +16,12 @@ class UsersController < ApplicationController
 	end
 
   def edit
-
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      redirect_to @user
       flash[:success] = "Profile updated"
     else
       render 'edit'
@@ -43,7 +42,8 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted."
-    redireict_to users_url
+    redirect_to users_url
+  end
 
 private
 	
