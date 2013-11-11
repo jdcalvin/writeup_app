@@ -1,14 +1,20 @@
 WriteupApp::Application.routes.draw do
-  get "users/new"
   resources :contents do
 		collection { post :import } 
 		resources :comments, only: [:create, :destroy]
 	end
+	resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  
+	root 'static_pages#home'
 
-	root to: 'contents#index'
+  match '/home',     to: 'static_pages#home',      via: 'get'
+  match '/help',     to: 'static_pages#help',      via: 'get'
+	match '/signup',	 to: 'users#new',							 via: 'get'
+  match '/signin',   to: 'sessions#new',           via: 'get'
+  match '/signout',  to: 'sessions#destroy',       via: 'delete'
 
-  match '/home',     to: 'static_pages#home',      via:'get'
-  match '/help',     to: 'static_pages#help',      via:'get'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
