@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   before_action :signed_in_user
   before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :admin_user,  only: [:edit, :destroy]
 
   def index
    
@@ -65,5 +66,9 @@ class ContentsController < ApplicationController
         redirect_to signin_url 
         flash[:warning] = "Please sign in." 
       end
-  end
+    end
+
+    def admin_user
+      redirect_to (root_url) unless current_user.admin?
+    end
 end

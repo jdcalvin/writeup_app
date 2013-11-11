@@ -18,9 +18,13 @@
         <td><%= content.context %></td>
         <td>
           <%= link_to 'Show', content %> <br>
-          <%= link_to 'Edit', edit_content_path(content) %> <br>
-					<%= link_to 'Destroy', content, method: 
+
+          
+            <% if current_user.admin? %>
+            <%= link_to 'Edit', edit_content_path(content) %> <br>
+					  <%= link_to 'Destroy', content, method: 
 												:delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
         </td>
       </tr>
     <% end %>
