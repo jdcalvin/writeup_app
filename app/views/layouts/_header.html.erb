@@ -30,8 +30,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "font-size:19px;" class="glyphicon glyphicon-cog"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", '#' %></li>
-            <li><%= link_to "List Users", '#' %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li><%= link_to "List Users", users_path %></li>
             <li class="divider"></li>
             <li><%= link_to 'Add Exceptions', new_content_path %></li>
             <li class="divider"></li>

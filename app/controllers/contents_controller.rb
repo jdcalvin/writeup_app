@@ -1,8 +1,11 @@
 class ContentsController < ApplicationController
+  before_action :signed_in_user
   before_action :set_content, only: [:show, :edit, :update, :destroy]
 
   def index
+   
     @contents = Content.all
+
   end
 
   def show
@@ -43,7 +46,7 @@ class ContentsController < ApplicationController
 	
   def import
     Content.import(params[:file])
-    redirect_to root_url 
+    redirect_to contents_url 
     flash[:success] =  "Exceptions imported."
   end
 
@@ -56,4 +59,11 @@ class ContentsController < ApplicationController
     def content_params
       params.require(:content).permit(:code, :cat, :desc, :context)
     end
+
+    def signed_in_user
+      unless signed_in?
+        redirect_to signin_url 
+        flash[:warning] = "Please sign in." 
+      end
+  end
 end
