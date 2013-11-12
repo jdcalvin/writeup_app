@@ -2,6 +2,6 @@
   <p>
 	<span class="content"><%=comment.body %></span><br>
 	<span class="timestamp">  
-		Posted <%= time_ago_in_words(comment.created_at) %> ago
+		Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.name %>
 	</span>
 <% end %>

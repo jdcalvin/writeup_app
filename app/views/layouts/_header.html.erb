@@ -3,7 +3,7 @@
 		<%= link_to "WriteUp Manual",contents_path, id: "logo" %>	
 	</a>
 
-	<form class="navbar-form navbar-left navbar-inverse" role="search">
+	<form class="navbar-form navbar-left navbar-form-inverse" role="search">
   		<div class="form-group">
     		<input type="text" class="form-control" placeholder="Search" style="background-color:gray; border:black;">
   		</div>
@@ -28,7 +28,7 @@
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "font-size:19px;" class="glyphicon glyphicon-cog"></span></a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu dropdown-inverse">
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li><%= link_to "List Users", users_path %></li>
@@ -38,6 +38,7 @@
             <li class = "dd-header"><strong>Admin Controls</strong></li>
             
             <li><%= link_to 'Add Exceptions', new_content_path %></li>
+            <li><%= link_to 'Create new user', signup_path %></li>
             
             <li class="divider"></li>
             <% end %>

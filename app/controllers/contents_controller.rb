@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
   before_action :signed_in_user
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :admin_user,  only: [:edit, :destroy]
+  
 
   def index
    
@@ -10,6 +11,7 @@ class ContentsController < ApplicationController
   end
 
   def show
+    @content = Content.find(params[:id])
   end
 
   def new
@@ -17,6 +19,7 @@ class ContentsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create

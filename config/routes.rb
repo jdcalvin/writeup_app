@@ -1,9 +1,10 @@
 WriteupApp::Application.routes.draw do
   resources :contents do
 		collection { post :import } 
-		resources :comments, only: [:create, :destroy]
+		resources :comments
 	end
 	resources :users
+
   resources :sessions, only: [:new, :create, :destroy]
   
 	root 'static_pages#home'

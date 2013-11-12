@@ -1,10 +1,19 @@
 class CommentsController < ApplicationController
 	
 	before_action :correct_user, only: :destroy
+	
 	 def create
-    	@content = Content.find(params[:content_id])
-    	@comment = @content.comments.create!(comment_params)
-    	redirect_to @content
+    	@content = Content.find(params[:content_id]) #was content_id
+    	
+    	@comment = @content.comments.build(comment_params)
+    	@comment.user = current_user
+    	if @comment.save
+    		flash[:success] = "Comment created"
+    	#
+    		redirect_to @content
+    	else
+    		render 'show'
+    	end
     end
 
 	 private

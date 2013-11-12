@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index, :edit, :update]
   before_action :correct_user,  only: [:edit, :update]
   before_action :admin_user,    only: :destroy
+ 
 
   def new
   	@user = User.new
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
 	end
 
   def edit
+    
   end
 
   def update
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Write Up Manual"
+      flash[:success] = "User successfully created"
       redirect_to @user
     else
       render 'new'
