@@ -21,7 +21,7 @@ def User.encrypt(token)
   end
 
 def feed
-	@feed = Comment.where("user_id = ?", id)
+	Comment.where("user_id = ?", id)
 end
 
   private
