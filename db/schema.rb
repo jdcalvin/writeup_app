@@ -18,11 +18,8 @@ ActiveRecord::Schema.define(version: 20131111035427) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "userid"
     t.integer  "user_id"
   end
-
-  add_index "comments", ["content_id"], name: "index_comments_on_content_id"
 
   create_table "contents", force: true do |t|
     t.string   "code"
