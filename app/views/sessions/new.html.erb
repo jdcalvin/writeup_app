@@ -4,11 +4,11 @@
 <%= form_for(:session, url: sessions_path) do |f| %>
 
 
-<div class="field">
+<div class="user-field">
   <strong>Email</strong><br>
   <%= f.text_field :email, class: "form-control" %>
 </div>
-<div class="field">
+<div class="user-field">
   <strong>Password</strong><br>
   <%= f.password_field :password, class: "form-control" %>
 </div>
