@@ -1,36 +1,34 @@
 <table class="table table-bordered">
-  <thead>
-    <tr style="background-color:#222; border:none;">
-      <th>Code</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Context</th>
-      <th>Action</th>
-    </tr>
-  </thead>
+  
 
   <tbody>
     <% @contents.each do |content| %>
-  
-			
-        <td><%= content.code %></td>
-        <td><%= content.cat %></td>
-        <td><%= simple_format content.desc %></td>
-        <td><%= content.context %></td>
-        <td>
-          <%= link_to 'Show', content %> <br>
+      
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+            <strong><%= content.code %></strong>
+        </div>
+        <%= link_to content do%>
+        <div class="panel body" id="content-panel">
+          <p><strong><%= simple_format content.cat %></strong></p>
+          <p><%= simple_format content.desc %></p>  
+        </div>
 
-          
+        <div class="links">
             <% if current_user.admin? %>
-            <%= link_to 'Edit', edit_content_path(content) %> <br>
-					  <%= link_to 'Delete', content, method: 
-												:delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_content_path(content) %> |
+            <%= link_to 'Delete', content, method: 
+                        :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
-        </td>
-      </tr>
+        </div>
+        <% end %>
+      </div>
     <% end %>
   </tbody>
 </table>
+          
+        
+    
 
 
 

@@ -47,6 +47,8 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+  
+
 private
 	
 	def user_params
@@ -70,6 +72,9 @@ private
   def admin_user
       redirect_to (root_url) unless current_user.admin?
     end
+
+
+
 
 
 end

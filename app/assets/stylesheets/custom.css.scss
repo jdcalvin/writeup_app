@@ -1,5 +1,5 @@
-$iconSpritePath: asset-url('glyphicons-halflings.png', image);
-$iconWhiteSpritePath: asset-url("glyphicons-halflings-white.png", image);
+$iconSpritePath: asset-path('glyphicons-halflings.png', image);
+$iconWhiteSpritePath: asset-path("glyphicons-halflings-white.png", image);
 @import "bootstrap";
 
 
@@ -12,6 +12,20 @@ margin-right:auto;
 width:70%;
 text-align:center;
 }
+
+a #content-panel
+{
+	color: black;
+	text-decoration: none;
+}
+
+
+div a:hover
+{
+	color:black;
+
+}
+
 
 .container
 {
