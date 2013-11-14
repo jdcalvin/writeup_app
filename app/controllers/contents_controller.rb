@@ -5,9 +5,7 @@ class ContentsController < ApplicationController
   
 
   def index
-   
-    @contents = Content.all
-
+    @contents = Content.search(params[:search])
   end
 
   def show
@@ -47,7 +45,7 @@ class ContentsController < ApplicationController
     redirect_to contents_url 
     flash[:info] = "Exception deleted."   
   end
-	
+        
   def import
     Content.import(params[:file])
     redirect_to contents_url 

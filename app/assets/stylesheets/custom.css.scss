@@ -1,13 +1,12 @@
-$iconSpritePath: asset-url('glyphicons-halflings.png', image);
+$iconSpritePath: asset-url("glyphicons-halflings.png", image);
 $iconWhiteSpritePath: asset-url("glyphicons-halflings-white.png", image);
 @import "bootstrap";
 
 
 /* icons */
 
-.glyphw {
-	background-image: url(/assets/glyphicons-halflings-white.png);
-}
+
+
 
 
 
