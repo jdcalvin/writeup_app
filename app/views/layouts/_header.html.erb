@@ -45,12 +45,14 @@
             <li class="dropdown"> <!--LIST GLYPH-->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "font-size:18px;" class="glyphicon glyphicon-list"></span>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" style="width:300px; opacity:.8; background-color:black; color:white">
                 <li class="dd-header"><strong>Table of Contents</strong></li><br>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+
+                <% Content.uniq.pluck(:section).each do |x| %>
+                  <li><%= link_to x, "#" %></li>
+                <% end %>
+
+                
               </ul>
             </li>
             <li class="dropdown"> <!--COG GLYPH-->

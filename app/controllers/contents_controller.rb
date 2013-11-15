@@ -46,7 +46,10 @@ class ContentsController < ApplicationController
     redirect_to contents_url 
     flash[:info] = "Exception deleted."   
   end
-        
+  
+  def unique_by_section
+    
+  end      
   def import
     Content.import(params[:file])
     redirect_to contents_url 
@@ -60,7 +63,7 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:code, :cat, :desc, :context)
+      params.require(:content).permit(:code, :cat, :desc, :context, :section)
     end
 
     def signed_in_user
