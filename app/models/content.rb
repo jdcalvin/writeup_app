@@ -15,6 +15,7 @@ class Content < ActiveRecord::Base
 	def self.search(search)
 		if search
     	find(:all, :conditions => ['code || cat || desc || context LIKE?', "%#{search}%"])
+    	
  		else
     	find(:all)
   	end
