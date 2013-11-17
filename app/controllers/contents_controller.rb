@@ -4,10 +4,20 @@ class ContentsController < ApplicationController
   before_action :admin_user,  only: [:edit, :destroy]
   
 
+#TIRE
+  #def index
+   # if params[:query].present?
+    #  @contents = Content.search(params[:query], load: true)
+    #else
+    #  @contents = Content.all
+    #end
+#end
+
   def index
-    @contents = Content.search(params[:query])
-    
+   
+    @contents = Content.search(params[:search])  
   end
+
 
   def show
     @content = Content.find(params[:id])

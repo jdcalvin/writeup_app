@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20131115080027) do
     t.integer  "user_id"
   end
 
+  add_index "comments", ["content_id"], name: "index_comments_on_content_id", using: :btree
+
   create_table "contents", force: true do |t|
     t.string   "code"
     t.string   "cat"
@@ -41,7 +43,7 @@ ActiveRecord::Schema.define(version: 20131115080027) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

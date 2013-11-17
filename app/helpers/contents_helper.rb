@@ -9,9 +9,4 @@ module ContentsHelper
 
 	table.uniq
 	end
-
-
-	def content_search
-		@contents = Content.search("#{query}")
-	end
 end
