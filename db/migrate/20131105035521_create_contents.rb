@@ -5,7 +5,7 @@ class CreateContents < ActiveRecord::Migration
       t.string :cat
       t.text :desc
       t.string :context
-      t.string :section
+     
 
       t.timestamps
     end
