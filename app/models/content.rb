@@ -27,7 +27,6 @@ class Content < ActiveRecord::Base
     	Content.find(:all, :conditions => 
     		['contents.code || contents.cat || contents.desc || 
     			contents.section || contents.context ILIKE?', "%#{search}%"])
-    	flash[:success] = "Serach"
  		else
     	find(:all)
   	end
