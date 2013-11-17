@@ -18,7 +18,7 @@
             <form class="navbar-form navbar-left navbar-form-inverse" role="search" style="padding-right:0">
               <div class="form-group" style="width:163px">
                 <%= form_tag contents_path, method: :get do %>
-                  <%= text_field_tag :search, params[:search], class:"form-control", style:"background-color:gray; border:black", placeholder:"Search" %>
+                  <%= text_field_tag :query, params[:query], class:"form-control", style:"background-color:gray; border:black", placeholder:"Search" %>
                 <% end %>
                
               </div>
@@ -48,8 +48,8 @@
               <ul class="dropdown-menu" style="width:300px; opacity:.8; background-color:black; color:white">
                 <li class="dd-header"><strong>Table of Contents</strong></li><br>
 
-                <% Content.uniq.pluck(:section).each do |x| %>
-                  <li><%= link_to x, "#" %></li>
+                <% table_helper.each do |x, y| %>
+                  <li><%= link_to "#{x} - #{y}", '#', style:"color:white" %></li>
                 <% end %>
 
                 

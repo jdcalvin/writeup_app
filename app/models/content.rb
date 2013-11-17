@@ -5,9 +5,7 @@ class Content < ActiveRecord::Base
 
 
 	
-	def self.unique_by_section
-		all.uniq_by(:section)
-	end
+	
 
 
 	def self.import(file)
@@ -19,7 +17,7 @@ class Content < ActiveRecord::Base
 
 	def self.search(search)
 		if search
-    	find(:all, :conditions => ['code || cat || desc || context LIKE?', "%#{search}%"])
+    	find(:all, :conditions => ['code || cat || desc || context || section LIKE?', "%#{search}%"])
     	
  		else
     	find(:all)

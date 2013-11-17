@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   
 
   def index
-    @contents = Content.search(params[:search])
+    @contents = Content.search(params[:query])
     
   end
 
@@ -21,6 +21,7 @@ class ContentsController < ApplicationController
 
   end
 
+  
   def create
     @content = Content.new(content_params)
 
@@ -47,9 +48,7 @@ class ContentsController < ApplicationController
     flash[:info] = "Exception deleted."   
   end
   
-  def unique_by_section
-    
-  end      
+        
   def import
     Content.import(params[:file])
     redirect_to contents_url 
