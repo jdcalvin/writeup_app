@@ -1,6 +1,7 @@
 class Content < ActiveRecord::Base
-	validates_presence_of :code, :cat, :desc, :context, :section
-	default_scope -> { order('code ASC') }
+	
+	validates_presence_of :code, :desc
+	#default_scope -> { order('code ASC') }
 	has_many :comments, dependent: :destroy
 
 	def self.import(file)
@@ -28,7 +29,10 @@ class Content < ActiveRecord::Base
     		['contents.code || contents.cat || contents.desc || 
     			contents.section || contents.context ILIKE?', "%#{search}%"])
  		else
-    	find(:all)
+    	@contents = Content.find(:all)
+    	@contents = Content.order('code')
+    	
+
   	end
 	end
 	

@@ -1,7 +1,8 @@
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="header-container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle" 
+            data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -9,70 +10,77 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand">
-            <%= link_to "WriteUp Manual",contents_path, id: "logo" %>        
+            <%= link_to "WriteUp Manual",contents_path, id: "logo" %>
           </a>
         </div>
         
         <div class="navbar-collapse collapse">
           <% if params[:controller] == 'contents' %>
-            <form class="navbar-form navbar-left navbar-form-inverse" role="search" style="padding-right:0">
+            <form class="navbar-form navbar-left navbar-form-inverse"
+              role="search" style="padding-right:0">
               <div class="form-group" style="width:163px">
                 <%= form_tag contents_path, method: :get do %>
-                  <%= text_field_tag :search, params[:search], class:"form-control", style:"background-color:gray; border:black", placeholder:"Search" %>
-                <% end %>
-               
+                  <%= text_field_tag :search, params[:search], class:"form-control", 
+                    style:"background-color:gray; border:black", placeholder:"Search" %>
+                <% end %>        
               </div>
             </form>
             <ul class="nav navbar-nav" style="padding-right:0">
-                <li><%= link_to 'Clear', contents_path %></li>
-              </ul> 
-            
-            
-          
-
+              <li><%= link_to 'Clear', contents_path %></li>
+            </ul> 
           <% else %>
           <% end %>
 
-
-          <ul class="nav navbar-nav navbar-right">
-            
+          <ul class="nav navbar-nav navbar-right">     
             <li><%= link_to 'Home', home_path %></li>
             <li><%= link_to 'Help', help_path %></li>
             <li><%= link_to 'Version', '#' %></li>
 
-  <!--DROP DOWNS (LOGIN SPECIFIC)      -->
+          <!--DROP DOWNS (LOGIN SPECIFIC)-->
           <% if signed_in? %>
-            <li class="dropdown"> <!--LIST GLYPH-->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "font-size:18px;" class="glyphicon glyphicon-list"></span>
+            <!--LIST GLYPH-->
+            <li class="dropdown"> 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span 
+                  style = "font-size:18px;" class="glyphicon glyphicon-list"></span>
               </a>
-              <ul class="dropdown-menu" style="width:300px; opacity:.8; background-color:black; color:white">
-                <li class="dd-header"><strong>Table of Contents</strong></li><br>
-
-                <% table_helper.each do |x, y| %>
-                  <li><%= link_to "#{x} - #{y}", '#', style:"color:white" %></li>
-                <% end %>
+              <ul class="dropdown-menu dd-custom">
+                <li class="dd-header"><strong>Table of Contents</strong></li>
 
                 
+                <% table_helper.each do |x| %>
+                  <li><%= link_to "#{x}", '#', style:"color:white" %></li>
+                <% end %>
+
+
+                
+
               </ul>
             </li>
-            <li class="dropdown"> <!--COG GLYPH-->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style = "font-size:19px;" class="glyphicon glyphicon-cog glyphw"></span></a>
-              <ul class="dropdown-menu">
+            <!--COG GLYPH-->
+            <li class="dropdown"> 
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span 
+                  style = "font-size:19px;" class="glyphicon glyphicon-cog glyphw"></span></a>
+              <ul class="dropdown-menu dd-custom">
+                <li class = "dd-header">
+                  <strong>User Settings</strong>
+                </li>
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li><%= link_to "List Users", users_path %></li>
-                <li class="divider"></li>
-            <!--ADMIN PANEL -->
-                <% if current_user.admin? %>
-                <li class = "dd-header"><strong>Admin Controls</strong></li>
+
+                <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
                 
+                <!--ADMIN PANEL -->
+                <% if current_user.admin? %>
+                <li class = "dd-header">
+                  <strong>Admin Controls</strong>
+                </li>
                 <li><%= link_to 'Add Exceptions', new_content_path %></li>
                 <li><%= link_to 'Create new user', signup_path %></li>
                 
-                <li class="divider"></li>
                 <% end %>
-            <!-- END PANEL -->
-                 <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+                <!-- END PANEL -->
+                 
               </ul>
             </li>
           <% else %>

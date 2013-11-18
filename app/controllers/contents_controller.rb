@@ -16,6 +16,7 @@ class ContentsController < ApplicationController
   def index
    
     @contents = Content.search(params[:search])  
+    
   end
 
 
