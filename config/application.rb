@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'csv'
 require 'rails/all'
-#require 'sprockets/railtie'
+require 'sprockets/railtie'
 
 
 # Require the gems listed in Gemfile, including any gems
@@ -24,5 +24,6 @@ module WriteupApp
     # config.i18n.default_locale = :de
 		config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
         config.assets.precompile << '*.js'
+        config.assets.precompile << '*.css'
   end
 end

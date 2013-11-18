@@ -4,7 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
-gem 'bootstrap-sass', '3.0.2.0'
+#gem 'bootstrap-sass', '3.0.2.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'pg'
@@ -21,7 +21,7 @@ gem 'jquery-rails',	'3.0.4'
 gem 'turbolinks',		'1.1.1'
 gem 'jbuilder',			'1.0.2'
 gem 'railties',			'4.0.0'
-gem 'tire'
+#gem 'tire'
 
 
 group :doc do
