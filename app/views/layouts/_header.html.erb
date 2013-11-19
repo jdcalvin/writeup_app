@@ -44,11 +44,9 @@
                   style = "font-size:18px;" class="glyphicon glyphicon-list"></span>
               </a>
               <ul class="dropdown-menu dd-custom">
-                <li class="dd-header"><strong>Table of Contents</strong></li>
-
-                
+                <li class="dd-header"><strong>Table of Contents</strong></li> 
                 <% table_helper.each do |x| %>
-                  <li><%= link_to "#{x}", '#', style:"color:white" %></li>
+                  <li><%= link_to "#{x}", contents_path %></li>
                 <% end %>
 
 
