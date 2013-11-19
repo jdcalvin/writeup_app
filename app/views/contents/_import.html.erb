@@ -1,8 +1,8 @@
 <h1 style="text-align:center"> Import New Database</h2>
 	<br><br>
 	<div id="error_explanation" class="alert alert-warning">
-	<p>Please ensure that the csv file contains only four columns:</p>
-	<p>Code | Category | Description | Context </p>
+	<p>Please ensure that the csv file contains the following columns:</p>
+	<p>code | cat | desc | section | context </p>
 	</div>
 <p class="help-block">Select a CSV file to import</p>
 <%= form_tag import_contents_path, multipart: true  do %>
