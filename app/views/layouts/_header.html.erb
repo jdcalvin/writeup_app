@@ -46,7 +46,7 @@
               <ul class="dropdown-menu dd-custom">
                 <li class="dd-header"><strong>Table of Contents</strong></li> 
                 <% table_helper.each do |x| %>
-                  <li><%= link_to "#{x}", contents_path %></li>
+                  <li><%= link_to x, "#" + x %></li>
                 <% end %>
 
 

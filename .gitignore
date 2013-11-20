@@ -18,3 +18,4 @@
 # Other
  *.swp
  *~
+tmp/*
