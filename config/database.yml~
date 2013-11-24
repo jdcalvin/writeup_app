@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: writeup_app_development
+  database: writup_app_development
   pool: 5
   host: localhost
   port: 5433
