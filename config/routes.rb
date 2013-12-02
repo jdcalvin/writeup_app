@@ -11,7 +11,7 @@ WriteupApp::Application.routes.draw do
 
   match '/home',     to: 'static_pages#home',      via: 'get'
   match '/help',     to: 'static_pages#help',      via: 'get'
-	match '/signup',	 to: 'users#new',							 via: 'get'
+	match '/signup',	 to: 'users#new',  via: 'get'
   match '/signin',   to: 'sessions#new',           via: 'get'
   match '/signout',  to: 'sessions#destroy',       via: 'delete'
 
