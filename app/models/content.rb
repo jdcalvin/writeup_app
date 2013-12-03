@@ -1,7 +1,7 @@
 class Content < ActiveRecord::Base
 	
 	validates_presence_of :code, :desc
-	#default_scope -> { order('code ASC') }
+	#default_scope -> { order('code ASC') }  REMOVED
 	has_many :comments, dependent: :destroy
 
 	def self.import(file)
