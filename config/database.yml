@@ -17,3 +17,11 @@ test:
   username: john
   password: password
 
+  production:
+  adapter: postgresql
+  database: writeup_app_produciton
+  pool: 5
+  host: localhost
+  port: 5433
+  username: john
+  password: password
