@@ -19,5 +19,4 @@
  *.swp
  *~
 tmp/*
-
 config/*.yml

@@ -1,11 +1,11 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
+    <div id="error_explanation",   class="alert alert-danger custom_flash">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li style = "text-align:left"><%= msg %></li>
       <% end %>
       </ul>
     </div>
@@ -30,10 +30,9 @@
     <strong>Password_Confirmation</strong><br>
     <%= f.password_field :password_confirmation, class: "form-control", rows: "4" %>
   </div>
-    <br>
-
-  <div class="actions">
-    <%= f.submit "Save changes", class: "btn btn-primary" %>
+  <br>
+  <div class="links" >
+    <%= f.submit class:"btn btn-primary"  %>
   </div>
 
 <% end %>

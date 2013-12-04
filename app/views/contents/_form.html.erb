@@ -1,11 +1,11 @@
 <%= form_for(@content) do |f| %>
   <% if @content.errors.any? %>
-    <div id="error_explanation" class="alert alert-danger">
+    <div id="error_explanation" class="alert alert-danger custom_flash" style = "width: 100%">
       <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
   
       <ul>
       <% @content.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li ><%= msg %></li>
       <% end %>
       </ul>
     </div>

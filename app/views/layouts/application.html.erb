@@ -14,7 +14,7 @@
 <div class="container">
 	<!--Message alert-->
 	<% flash.each do |key, value| %>
-     <div class="alert alert-<%= key %>"><%= value %></div>
+     <div style = "text-align:center; font-weight: 700", class="alert alert-<%= key %>"><%= value %></div>
      <% end %>
 	<%= yield %> <!--Renders pages-->
 </div>

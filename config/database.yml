@@ -10,16 +10,18 @@ development:
 
 test:
   adapter: postgresql
-  database: writeup_app_development
+  database: writeup_app_test
+  encoding: unicode
   pool: 5
   host: localhost
   port: 5433
   username: john
   password: password
 
-  production:
+production:
   adapter: postgresql
   database: writeup_app_produciton
+  encoding: unicode
   pool: 5
   host: localhost
   port: 5433
