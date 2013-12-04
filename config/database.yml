@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: writup_app_development
+  database: writup_app-dev
   pool: 5
   host: localhost
   username: action
@@ -9,7 +9,7 @@ development:
 
 test:
   adapter: postgresql
-  database: writeup_app_development
+  database: writeup_app-test
   pool: 5
   host: localhost
   username: action

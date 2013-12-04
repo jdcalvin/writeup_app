@@ -1,29 +1,4 @@
 <% provide(:title, 'New user') %>
 <h1 style = "text-align:center">Create new user</h1>
 
-<%= form_for(@user) do |f| %>
-
-<div class="user-field">
-   <strong>Name</strong><br>
-  <%= f.text_field :name, class: "form-control" %>
-</div>
-<div class="user-field">
-  <strong>Email</strong><br>
-  <%= f.text_field :email, class: "form-control" %>
-
-</div>
-<div class="user-field">
-  <strong>Password</strong><br>
-  <%= f.password_field :password, class: "form-control" %>
-
-</div>
-<div class="user-field">
-  <strong>Password Confirmation</strong><br>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
-</div>
-<br>
-<div class="links" >
-  <%= f.submit class:"btn btn-primary"  %>
-</div>
-
-<% end %>
+<%= render 'form' %>
