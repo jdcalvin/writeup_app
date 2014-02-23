@@ -8,8 +8,8 @@ gem 'bootstrap-sass', '3.0.0.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'pg'
+
 group :development do
-	#gem 'sqlite3',		'1.3.8'
 	gem 'rspec-rails', '2.13.1'
 	
 end
@@ -21,7 +21,6 @@ gem 'jquery-rails',	'3.0.4'
 gem 'turbolinks',		'1.1.1'
 gem 'jbuilder',			'1.0.2'
 gem 'railties',			'4.0.0'
-#gem 'tire'
 
 
 group :doc do
@@ -29,7 +28,6 @@ group :doc do
 end
 
 group :production do
-	gem 'pg'				
 	gem 'rails_12factor', '0.0.2'
 end
 
