@@ -1,1 +1,0 @@
-$('tr[href]').click -> window.open 'http://' + $(this).attr('href');
