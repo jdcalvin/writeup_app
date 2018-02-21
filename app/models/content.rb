@@ -10,12 +10,14 @@ class Content < ActiveRecord::Base
 		end
 	end
 
-	def self.search(search)
-		if search
-      where('contents.code || contents.cat || contents.desc || contents.section || contents.context ILIKE ?', search)
- 		else
-    	order('code')
-  	end
+	def self.search(search=nil)
+    scoped =  if search
+                where('contents.code || contents.cat || contents.desc || contents.section || contents.context ILIKE ?', search)
+              else
+                all
+              end
+
+    scoped.order('code')
 	end
 
 end
