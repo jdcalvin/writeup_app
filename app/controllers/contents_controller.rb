@@ -2,21 +2,9 @@ class ContentsController < ApplicationController
   before_action :signed_in_user
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :admin_user,  only: [:edit, :destroy]
-  
-
-#TIRE
-  #def index
-   # if params[:query].present?
-    #  @contents = Content.search(params[:query], load: true)
-    #else
-    #  @contents = Content.all
-    #end
-#end
 
   def index
-   
     @contents = Content.search(params[:search])  
-    
   end
 
 
@@ -29,9 +17,7 @@ class ContentsController < ApplicationController
   end
 
   def edit
-
   end
-
   
   def create
     @content = Content.new(content_params)
@@ -58,7 +44,7 @@ class ContentsController < ApplicationController
     redirect_to contents_url 
     flash[:info] = "Exception deleted."   
   end
-  
+
         
   def import
     Content.import(params[:file])
@@ -68,22 +54,22 @@ class ContentsController < ApplicationController
 
   private
 
-    def set_content
-      @content = Content.find(params[:id])
-    end
+  def set_content
+    @content = Content.find(params[:id])
+  end
 
-    def content_params
-      params.require(:content).permit(:code, :cat, :desc, :context, :section)
-    end
+  def content_params
+    params.require(:content).permit(:code, :cat, :desc, :context, :section)
+  end
 
-    def signed_in_user
-      unless signed_in?
-        redirect_to signin_url 
-        flash[:warning] = "Please sign in." 
-      end
+  def signed_in_user
+    unless signed_in?
+      redirect_to signin_url 
+      flash[:warning] = "Please sign in." 
     end
+  end
 
-    def admin_user
-      redirect_to (root_url) unless current_user.admin?
-    end
+  def admin_user
+    redirect_to (root_url) unless current_user.admin?
+  end
 end

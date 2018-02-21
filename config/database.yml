@@ -4,9 +4,6 @@ development:
   database: writeup_app_development
   pool: 5
   host: localhost
-  port: 5433
-  username: john
-  password: password
 
 test:
   adapter: postgresql
@@ -14,9 +11,7 @@ test:
   encoding: unicode
   pool: 5
   host: localhost
-  port: 5433
-  username: john
-  password: password
+
 
 production:
   adapter: postgresql
@@ -24,6 +19,3 @@ production:
   encoding: unicode
   pool: 5
   host: localhost
-  port: 5433
-  username: john
-  password: password

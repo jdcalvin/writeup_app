@@ -13,7 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20131115080027) do
 
-  create_table "comments", force: true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
     t.integer  "content_id"
     t.text     "body"
     t.datetime "created_at"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131115080027) do
 
   add_index "comments", ["content_id"], name: "index_comments_on_content_id", using: :btree
 
-  create_table "contents", force: true do |t|
+  create_table "contents", force: :cascade do |t|
     t.string   "code"
     t.string   "cat"
     t.text     "desc"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20131115080027) do
     t.string   "section"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"

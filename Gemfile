@@ -1,30 +1,24 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.5.0'
 
+gem 'rails', '4.2.10'
 
-gem 'rails', '4.0.0'
-
-gem 'bootstrap-sass', '3.0.0.0'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby', '3.1.2'
 gem 'cancan'
-gem 'pg'
+gem 'pg', '~>0.18'
+gem 'sass-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
+gem 'railties'
 
 group :development do
-	gem 'rspec-rails', '2.13.1'
-	
+  gem 'rspec-rails'
 end
 
-gem 'sass-rails',		'~> 4.0.0'
-gem 'uglifier',			'2.1.1'
-gem 'coffee-rails',	'4.0.0'
-gem 'jquery-rails',	'3.0.4'
-gem 'turbolinks',		'1.1.1'
-gem 'jbuilder',			'1.0.2'
-gem 'railties',			'4.0.0'
-
-
-group :doc do
-	gem 'sdoc', '0.3.20',		require: false
+group :test do
+  gem 'fuubar', require: false
 end
 
 group :production do
